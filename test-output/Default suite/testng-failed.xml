@@ -5,7 +5,13 @@
     <classes>
       <class name="com.tatacliq.GetProductsDetailsTest.GetProductDetailsTest">
         <methods>
+          <include name="beforeclassTest"/>
+          <include name="afterMethodTest"/>
+          <include name="beforeMethodTest"/>
+          <include name="afterClassTest"/>
           <include name="getProductDetailsTest"/>
+          <include name="beforesuiteTest"/>
+          <include name="afterSuiteTest"/>
         </methods>
       </class> <!-- com.tatacliq.GetProductsDetailsTest.GetProductDetailsTest -->
     </classes>

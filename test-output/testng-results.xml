@@ -1,16 +1,141 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-08-29T21:39:50Z" name="Default suite" finished-at="2022-08-29T21:40:13Z" duration-ms="23196">
+  <suite started-at="2022-08-30T06:10:35Z" name="Default suite" finished-at="2022-08-30T06:10:35Z" duration-ms="175">
     <groups>
     </groups>
-    <test started-at="2022-08-29T21:39:50Z" name="Default test" finished-at="2022-08-29T21:40:13Z" duration-ms="23196">
+    <test started-at="2022-08-30T06:10:35Z" name="Default test" finished-at="2022-08-30T06:10:35Z" duration-ms="175">
       <class name="com.tatacliq.GetProductsDetailsTest.GetProductDetailsTest">
-        <test-method signature="getProductDetailsTest()[pri:0, instance:com.tatacliq.GetProductsDetailsTest.GetProductDetailsTest@1ab06251]" started-at="2022-08-29T21:39:50Z" name="getProductDetailsTest" finished-at="2022-08-29T21:40:13Z" duration-ms="23166" status="PASS">
+        <test-method is-config="true" signature="beforesuiteTest()[pri:0, instance:com.tatacliq.GetProductsDetailsTest.GetProductDetailsTest@600b9d27]" started-at="2022-08-30T06:10:34Z" name="beforesuiteTest" finished-at="2022-08-30T06:10:35Z" duration-ms="1172" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforesuiteTest -->
+        <test-method is-config="true" signature="beforeclassTest()[pri:0, instance:com.tatacliq.GetProductsDetailsTest.GetProductDetailsTest@600b9d27]" started-at="2022-08-30T06:10:35Z" name="beforeclassTest" finished-at="2022-08-30T06:10:35Z" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeclassTest -->
+        <test-method is-config="true" signature="beforeMethodTest()[pri:0, instance:com.tatacliq.GetProductsDetailsTest.GetProductDetailsTest@600b9d27]" started-at="2022-08-30T06:10:35Z" name="beforeMethodTest" finished-at="2022-08-30T06:10:35Z" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethodTest -->
+        <test-method signature="getProductDetailsTest()[pri:0, instance:com.tatacliq.GetProductsDetailsTest.GetProductDetailsTest@600b9d27]" started-at="2022-08-30T06:10:35Z" name="getProductDetailsTest" finished-at="2022-08-30T06:10:35Z" duration-ms="128" status="FAIL">
+          <exception class="java.lang.NullPointerException">
+            <message>
+              <![CDATA[Cannot invoke "com.tatacliq.GenericLibrary.PropertyFileUtility.getDataFromPropertyFile(String)" because "this.propertyfileutils" is null]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException: Cannot invoke "com.tatacliq.GenericLibrary.PropertyFileUtility.getDataFromPropertyFile(String)" because "this.propertyfileutils" is null
+at com.tatacliq.GetProductsDetailsTest.GetProductDetailsTest.getProductDetailsTest(GetProductDetailsTest.java:52)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getProductDetailsTest -->
+        <test-method is-config="true" signature="afterMethodTest()[pri:0, instance:com.tatacliq.GetProductsDetailsTest.GetProductDetailsTest@600b9d27]" started-at="2022-08-30T06:10:35Z" name="afterMethodTest" finished-at="2022-08-30T06:10:35Z" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethodTest -->
+        <test-method is-config="true" signature="afterClassTest()[pri:0, instance:com.tatacliq.GetProductsDetailsTest.GetProductDetailsTest@600b9d27]" started-at="2022-08-30T06:10:35Z" name="afterClassTest" finished-at="2022-08-30T06:10:35Z" duration-ms="2" status="FAIL">
+          <exception class="java.lang.NullPointerException">
+            <message>
+              <![CDATA[Cannot invoke "com.tatacliq.GenericLibrary.WebDriverUtility.quitBrowser(org.openqa.selenium.WebDriver)" because "this.webdriverutils" is null]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException: Cannot invoke "com.tatacliq.GenericLibrary.WebDriverUtility.quitBrowser(org.openqa.selenium.WebDriver)" because "this.webdriverutils" is null
+at com.tatacliq.GenericLibrary.BaseClass.afterClassTest(BaseClass.java:124)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:59)
+at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:458)
+at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:222)
+at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:142)
+at org.testng.internal.TestMethodWorker.invokeAfterClassMethods(TestMethodWorker.java:214)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClassTest -->
+        <test-method is-config="true" signature="afterSuiteTest()[pri:0, instance:com.tatacliq.GetProductsDetailsTest.GetProductDetailsTest@600b9d27]" started-at="2022-08-30T06:10:35Z" name="afterSuiteTest" finished-at="2022-08-30T06:10:35Z" duration-ms="1" status="FAIL">
+          <exception class="java.lang.NullPointerException">
+            <message>
+              <![CDATA[Cannot invoke "com.tatacliq.GenericLibrary.Excelutility.saveDataIntoExcel(String)" because "this.excelutils" is null]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException: Cannot invoke "com.tatacliq.GenericLibrary.Excelutility.saveDataIntoExcel(String)" because "this.excelutils" is null
+at com.tatacliq.GenericLibrary.BaseClass.afterSuiteTest(BaseClass.java:134)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:59)
+at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:458)
+at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:222)
+at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:142)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:425)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterSuiteTest -->
       </class> <!-- com.tatacliq.GetProductsDetailsTest.GetProductDetailsTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
