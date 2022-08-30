@@ -8,23 +8,25 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 public class WebDriverUtility {
 	
+	WebDriver driver;
+	
 	
 	/**
 	 * This method is used to launch to the Application
 	 * @param url
 	 * @param driver
 	 */
-	public  void launchApp(String url , WebDriver driver)
-	{
-		driver.get(url);
-	}
+//	public  void launchApp(String url)
+//	{
+//		driver.get(url);
+//	}
 	
 	/**
 	 * this method is used to disable notifications
 	 */public void disableNotifications() {
 			ChromeOptions opt=new ChromeOptions();
 			opt.addArguments("--disable-notifications");
-			WebDriver driver=new ChromeDriver(opt);
+			 driver=new ChromeDriver(opt);
 	}
 
 

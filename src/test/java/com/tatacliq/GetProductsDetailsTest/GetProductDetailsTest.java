@@ -19,20 +19,26 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Test;
 
+import com.tatacliq.GenericLibrary.BaseClass;
 import com.tatacliq.GenericLibrary.ConstantPath;
 import com.tatacliq.GenericLibrary.Excelutility;
+import com.tatacliq.GenericLibrary.PropertyFileUtility;
 import com.tatacliq.GenericLibrary.WebDriverUtility;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class GetProductDetailsTest {
+public class GetProductDetailsTest extends BaseClass {
 
 	
 	String product_name;
 	Excelutility excelutils;
 	WebDriver driver;
+	Workbook wb;
+	PropertyFileUtility propertyfileutils;
 	@Test
 	
 	public void getProductDetailsTest() throws InterruptedException, EncryptedDocumentException, IOException
@@ -43,11 +49,43 @@ public class GetProductDetailsTest {
 		excelutils.openExcel(ConstantPath.EXCELFILEPATH);
 		product_name=excelutils.DataFromExcel("PRODUCTS_NAME", 1, 1);
 				
+		browser=propertyfileutils.getDataFromPropertyFile("browser");
+		 url = propertyfileutils.getDataFromPropertyFile("url");
+		
+		switch (browser)
+		{
+		case "chrome":
+		
+			WebDriverManager.chromedriver().setup();
+			driver = new ChromeDriver();
+			break;
+			
+		case "firefox":
+		
+			WebDriverManager.firefoxdriver().setup();
+			driver = new FirefoxDriver();
+			break;
+			
+		case "edge":
+		
+			WebDriverManager.edgedriver().setup();
+			driver = new EdgeDriver();
+			break;	
+		
+		
+		default:
+			WebDriverManager.chromedriver().setup();
+			driver=new ChromeDriver();
+			break;
+		}
+		
 	
+		driver.get(url);
 		webdriverutils=new WebDriverUtility();
 		webdriverutils.disableNotifications();
 		webdriverutils.maximizeBrowser(driver);
 		webdriverutils.waitTillpageLoad(10, driver);
+		
 		
 		
 		Thread.sleep(2000);
@@ -63,20 +101,20 @@ public class GetProductDetailsTest {
 		{
 			System.out.println(prod_names.get(i).getText());
 		}
-		
-		FileInputStream fis1=new FileInputStream("./src/main/resources/TataCliqData.xlsx");
-	    Workbook wb = WorkbookFactory.create(fis1);
-		Sheet sh = wb.getSheet("PRODUCT_DETAILS");
-		int lastRow = sh.getLastRowNum();
-		for(int i=1; i<lastRow;i++)
-		{
-			Row rw = sh.getRow(i);
-			Cell cell = rw.createCell(i);
-			cell.setCellValue(prod_names.get(i).getText());
-		}
-		FileOutputStream fos=new FileOutputStream("./src/main/resources/TataCliqData.xlsx");
-		wb.write(fos);
-		
+//		
+//		FileInputStream fis1=new FileInputStream("./src/main/resources/TataCliqData.xlsx");
+//	    Workbook wb = WorkbookFactory.create(fis1);
+//		Sheet sh = wb.getSheet("PRODUCT_DETAILS");
+//		int lastRow = sh.getLastRowNum();
+//		for(int i=1; i<lastRow;i++)
+//		{
+//			Row rw = sh.getRow(i);
+//			Cell cell = rw.createCell(i);
+//			cell.setCellValue(prod_names.get(i).getText());
+//		}
+//		FileOutputStream fos=new FileOutputStream("./src/main/resources/TataCliqData.xlsx");
+//		wb.write(fos);
+//		
 		
 		
 		Thread.sleep(2000);
@@ -88,19 +126,7 @@ public class GetProductDetailsTest {
 			{
 				System.out.println(prod_description.get(i).getText());
 			}
-			
 
-			//Sheet sh = wb.getSheet("PRODUCT_DETAILS");
-			int lastRow1 = sh.getLastRowNum();
-			for(int i=1; i<lastRow;i++)
-			{
-				Row rw = sh.getRow(i);
-				Cell cell = rw.createCell(i+1);
-				cell.setCellValue(prod_description.get(i).getText());				
-			}
-
-			wb.write(fos);
-			
 						
 			Thread.sleep(2000);
 			
@@ -112,21 +138,24 @@ public class GetProductDetailsTest {
 				{
 					System.out.println(prod_price.get(i).getText());
 				}
+				 
+				
+		
 				
 				
-				//Sheet sh = wb.getSheet("PRODUCT_DETAILS");
-				int lastRow2 = sh.getLastRowNum();
-				for(int i=1; i<lastRow;i++)
+				for(int i=0; i<description_count; i++)
 				{
-					Row rw = sh.getRow(i);
-					Cell cell = rw.createCell(i+2);
-					cell.setCellValue(prod_price.get(i).getText());
+					excelutils.openExcel(ConstantPath.EXCELFILEPATH);
+					wb.getSheet("PRODUCT_DETAILS").createRow(i+1).createCell(0).setCellValue(prod_description.get(i).getText());
+					wb.getSheet("PRODUCT_DETAILS").getRow(i+1).createCell(1).setCellValue(prod_description.get(i).getText());
+					wb.getSheet("PRODUCT_DETAILS").getRow(i+1).createCell(1).setCellValue(prod_price.get(i).getText());
+					
 				}
-				wb.write(fos);
+				excelutils.saveDataIntoExcel("PRODUCT_DETAILS");
 				
 				wb.close();
 				
-		driver.quit();	
+			
 	}
 	
 	

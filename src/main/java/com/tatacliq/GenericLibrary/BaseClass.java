@@ -24,6 +24,7 @@ public class BaseClass {
 	public WebDriver driver;
 	public WebDriverUtility webdriverutils;
 	public Excelutility excelutils;
+	PropertyFileUtility propertyfileutils;
 
 	
 	/**
@@ -37,9 +38,13 @@ public class BaseClass {
 
 		Excelutility excelutility = new Excelutility();
 		excelutility.openExcel(ConstantPath.EXCELFILEPATH);	
-		
-		PropertyFileUtility propertyfileutils=new PropertyFileUtility();
+//		
+		 propertyfileutils=new PropertyFileUtility();
 		propertyfileutils.openPropertyFile(ConstantPath.PROPERTYFILEPATH);
+//		
+//		browser = propertyfileutils.getDataFromPropertyFile("browser");
+//		 url = propertyfileutils.getDataFromPropertyFile("url");
+//		
 	}
 	
 	
@@ -58,37 +63,38 @@ public class BaseClass {
 	
 	public void beforeclassTest(/*String browser*/) throws EncryptedDocumentException, NumberFormatException, Throwable
 	{
-		WebDriverUtility webdriverutils=new WebDriverUtility();
-       
-
-		switch (browser)
-		{
-		case "chrome":
 		
-			WebDriverManager.chromedriver().setup();
-			driver = new ChromeDriver();
-			break;
-			
-		case "firefox":
-		
-			WebDriverManager.firefoxdriver().setup();
-			driver = new FirefoxDriver();
-			break;
-			
-		case "edge":
-		
-			WebDriverManager.edgedriver().setup();
-			driver = new EdgeDriver();
-			break;	
-		
-		
-		default:
-			WebDriverManager.chromedriver().setup();
-			driver=new ChromeDriver();
-			break;
-		}
-		
-		webdriverutils.launchApp(url, driver);
+//		browser=propertyfileutils.getDataFromPropertyFile("browser");
+//		 url = propertyfileutils.getDataFromPropertyFile("url");
+//		
+//		switch (browser)
+//		{
+//		case "chrome":
+//		
+//			WebDriverManager.chromedriver().setup();
+//			driver = new ChromeDriver();
+//			break;
+//			
+//		case "firefox":
+//		
+//			WebDriverManager.firefoxdriver().setup();
+//			driver = new FirefoxDriver();
+//			break;
+//			
+//		case "edge":
+//		
+//			WebDriverManager.edgedriver().setup();
+//			driver = new EdgeDriver();
+//			break;	
+//		
+//		
+//		default:
+//			WebDriverManager.chromedriver().setup();
+//			driver=new ChromeDriver();
+//			break;
+//		}
+//		
+//		driver.get(url);
 	}
 
 	
